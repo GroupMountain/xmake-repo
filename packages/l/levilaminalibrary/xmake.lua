@@ -18,10 +18,13 @@ package("levilaminalibrary")
     add_urls("https://github.com/GroupMountain/levilaminalibrary/releases/download/v$(version)/SDK.zip")
     add_versions("0.13.5", "ea41733bac86132fdacf51d050648bfc65ab8688e71ceae3f069aef18b6a2981")
 
-    on_install(function (package)
+    on_load(function(package)
         for _, dep in ipairs(deps) do
             package:add("deps", dep)
         end
+    end)
+
+    on_install(function (package)
         os.cp("include", package:installdir())
         os.cp("lib/*.lib", package:installdir("lib"))
     end)
