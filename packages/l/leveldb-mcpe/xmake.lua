@@ -8,6 +8,6 @@ package("leveldb-mcpe")
     end)
 
     on_install(function (package)
-        os.cp("include", package:installdir())
+        os.cp("include", path.join(package:installdir(),"include/leveldb-mcpe"))
         os.cp("lib/*.lib", package:installdir("lib"))
     end)
