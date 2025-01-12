@@ -11,6 +11,7 @@ package("gmlib")
     add_versions("0.13.6", "9a746300e8d421790fe7e201c61e37fd325c13a095344974cd0e5dc66bb20fbe")
     add_versions("0.13.7", "d368f91b7e93fcbb5202a3837c8205e128f9b8d6d5660977fab9b8a161b0324a")
     add_versions("0.13.9", "b2f8cfe53bb092e77e6f76cca7d91574aa571fc28542b3472750ed804ee7100a")
+    add_versions("0.13.10", "f8bfe63aa04c8f50ded82228ba4b593c38275c7639825953a8687793e59c22c4")
 
     on_install(function (package)
         os.cp("include", package:installdir())
