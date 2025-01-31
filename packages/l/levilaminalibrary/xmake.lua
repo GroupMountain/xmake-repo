@@ -18,6 +18,7 @@ package("levilaminalibrary")
     add_urls("https://github.com/GroupMountain/levilaminalibrary/releases/download/v$(version)/SDK.zip")
     add_versions("0.13.5", "ea41733bac86132fdacf51d050648bfc65ab8688e71ceae3f069aef18b6a2981")
     add_versions("0.13.5-fix", "3a38bdbf7600eb34f349a87a10a6af5f406098306472e4deca32c059d048da9d")
+    add_versions("1.0.0", "6bec59d1049d04b0033b0ade692c633e408e1e9291d2b6f9a2faaa181c85d4c6")
 
     on_load(function(package)
         for _, dep in ipairs(deps) do
