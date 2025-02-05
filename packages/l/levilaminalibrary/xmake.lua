@@ -1,19 +1,3 @@
-local deps = {
-    "entt 41aab920b083aa424ac1d27666ce287eeaff6ceb",
-    "expected-lite v0.7.0",
-    "fmt 10.2.1",
-    "gsl v4.0.0",
-    "leveldb 1.23",
-    "magic_enum v0.9.5",
-    "nlohmann_json v3.11.3",
-    "rapidjson v1.1.0",
-    "ctre 3.8.1",
-    "pcg_cpp v1.0.0",
-    "pfr 2.1.1",
-    "symbolprovider v1.1.0",
-    "bdslibrary 1.21.3.01"
-}
-
 package("levilaminalibrary")
     add_urls("https://github.com/GroupMountain/levilaminalibrary/releases/download/v$(version)/SDK.zip")
     add_versions("0.13.5", "ea41733bac86132fdacf51d050648bfc65ab8688e71ceae3f069aef18b6a2981")
@@ -21,8 +5,38 @@ package("levilaminalibrary")
     add_versions("1.0.0", "6bec59d1049d04b0033b0ade692c633e408e1e9291d2b6f9a2faaa181c85d4c6")
 
     on_load(function(package)
+        import("net.http")
+        local deps_url = "https://github.com/GroupMountain/levilaminalibrary/releases/download/v" .. package:version():rawstr() .. "/deps.list" -- 实测这里使用v$(version)无法生效
+        local deps_path = path.join(os.tmpdir(),package:version():rawstr(), "deps.list")
+        local max_retries = 3   -- 最大重连次数：3
+        local retry_count = 0
+        while retry_count < max_retries do
+            try
+            {
+                function()
+                    http.download(deps_url,deps_path)
+                    retry_count = max_retries   -- 下载成功就跳出循环
+                end,
+                catch
+                {
+                    function(errors)
+                        retry_count =retry_count + 1
+                        if retry_count < max_retries then
+                            print("Dependency list download failed,attempting to download again,frequency " .. retry_count .. "/" .. max_retries .. ".")
+                        else
+                            print("Dependency list download failed:" .. errors)
+                            raise("Click the link to test network connectivity:" .. deps_url)   -- 强制退出程序
+                        end
+                    end
+                }
+            }
+        end
+        local data = io.readfile(deps_path)
+        local deps = data:split('\n')
         for _, dep in ipairs(deps) do
-            package:add("deps", dep)
+            if dep ~= "" then
+                package:add("deps", dep)
+            end
         end
     end)
 
@@ -30,3 +44,4 @@ package("levilaminalibrary")
         os.cp("include", package:installdir())
         os.cp("lib/*.lib", package:installdir("lib"))
     end)
+
