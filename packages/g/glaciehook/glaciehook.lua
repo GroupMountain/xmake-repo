@@ -4,8 +4,8 @@ package("glaciehook")
 
     on_install(function (package)
         local configs = {}
-        if package:config("shared") then
-            configs.kind = "shared"
+        if package:config("static") then
+            configs.kind = "static"
         end
         import("package.tools.xmake").install(package, configs)
     end)
