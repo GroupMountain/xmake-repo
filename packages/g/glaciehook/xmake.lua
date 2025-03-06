@@ -1,6 +1,7 @@
 package("glaciehook")
     add_urls("https://github.com/GlacieTeam/GlacieHook/archive/refs/tags/v$(version).tar.gz", "https://github.com/GlacieTeam/GlacieHook.git")
     add_versions("1.0.0", "dc5259e6214e8cb8c1fd1c0d3abfd5b96b19c709a26d0e7edf155b0910a27a5d")
+    add_versions("1.0.1", "d0f22a3b152af5763bef171dbf3e3b1d1ae63d5deb609a0ca93a8d2e27881760")
 
     on_install(function (package)
         os.cp("include", package:installdir())
