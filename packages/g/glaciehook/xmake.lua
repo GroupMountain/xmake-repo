@@ -1,6 +1,6 @@
 package("glaciehook")
     add_urls("https://github.com/GlacieTeam/GlacieHook/archive/refs/tags/v$(version).tar.gz", "https://github.com/GlacieTeam/GlacieHook.git")
-    add_versions("0.0.1", "0440b4752745edb920e80fe97ff84c21f54094880c8ee80efdb2f8af1c914da2")
+    add_versions("0.0.1", "bf870291a7916755187304de2115c27892dca78f5e12fc0530d54d6fb8e133c9")
 
     on_install(function (package)
         local configs = {}
