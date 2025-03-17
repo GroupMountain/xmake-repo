@@ -5,4 +5,5 @@ package("zstr")
 
     on_install("windows", "linux", function (package)
         os.cp("src", package:installdir())
+        os.rename(path.join(package:installdir(), "src"), path.join(package:installdir(), "include"))
     end)
