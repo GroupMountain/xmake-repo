@@ -15,8 +15,10 @@ package("gmlib")
     add_versions("A:0.13.9", "b2f8cfe53bb092e77e6f76cca7d91574aa571fc28542b3472750ed804ee7100a")
     add_versions("A:0.13.10", "f8bfe63aa04c8f50ded82228ba4b593c38275c7639825953a8687793e59c22c4")
     add_versions("A:1.0.0-rc.1", "a6735b17bf4962fb6d8f05e7ffaae1cde239355685440ae14cc543cfd26fe30a")
+    add_versions("A:1.0.0-rc.2", "0659d16270c5ff6a4c32dbc20a1488f99b927a45f463edc2e86305fc408f63ef")
 
     add_versions("B:1.0.0-rc.1", "b2814979a79f0a2ea3f9a6692275ddd5e8b9a603f268ceca6c6b7202d226e070")
+    add_versions("B:1.0.0-rc.2", "55cc084798b1ea8c693406c523ef63ffa73504857304549a7e5bef97d74047ba")
 
     on_install(function (package)
         if os.isdir("include") then
