@@ -12,6 +12,7 @@ package("binarystream")
     add_versions("1.0.4", "01dfa8c975a2a4070a4f356793d396a4e1a850dd28a2b70fea6705d7c59a4b97")
     add_versions("1.0.5", "ece8e606bc3e0afda1774e42e97da3ecba021b830d814820f13b1379a2d1b08d")
     add_versions("1.1.0", "7e2aabcd0b32a48d05d957f76f4bee142263124bdddb0d9f0ac3cbd977927700")
+    add_versions("1.1.1", "008b2cf7782f9f6346c74bb3182146c44dc12004e115754722c71c47e05e8ec6")
 
     on_install("windows", "linux", function (package)
         os.cp("include", package:installdir())
