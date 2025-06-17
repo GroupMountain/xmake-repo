@@ -3,7 +3,7 @@ package("endstone")
     add_urls("https://github.com/EndstoneMC/endstone/archive/refs/tags/v$(version).tar.gz")
 
     add_deps("expected-lite 0.8.0")
-    add_deps("fmt 10.2.1")
+    add_deps("fmt 10.2.1", { configs = { header_only = true }})
 
     add_versions("0.6.0", "d9d7f865629165230b6dfcb34b359186524f6784a7655f39a7140ca998455a38")
     add_versions("0.6.1", "d77cf3c6cf55c7df5c6e74e87ba6e371c3716778f53f1fa97d3eabe29555f91d")
@@ -14,6 +14,7 @@ package("endstone")
     add_versions("0.8.0", "31236a958007d25c74e56cb274a4c236b6aac52b411c49ad3c147b144a931c6d")
     add_versions("0.8.1", "7d867a0d5ff46879f7ca78f852ce9f7b1e02881efb0626fbd76d9629c43472f5")
     add_versions("0.8.2", "2282dfca2bb65b1916c736d35e21664a0ba209fef84cf849434e08431fe1fc77")
+    add_versions("0.9.0", "41729c830e1e25e9ab1de670d1c3fa472a24fd19af2da23ebe34aaab90c8eae0")
 
     on_install("windows", "linux", function (package)
         os.cp("include", package:installdir())
