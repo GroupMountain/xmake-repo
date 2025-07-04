@@ -16,6 +16,8 @@ package("endstone")
     add_versions("0.8.2", "2282dfca2bb65b1916c736d35e21664a0ba209fef84cf849434e08431fe1fc77")
     add_versions("0.9.0", "41729c830e1e25e9ab1de670d1c3fa472a24fd19af2da23ebe34aaab90c8eae0")
     add_versions("0.9.1", "e798ca974a39d66414603c4229cda1559a44ab1189b6dfc18fac5abf1f27f72e")
+    add_versions("0.9.2", "bfbf64996510c293d2e3b9373ac9b96c6fad5a8ff7dca7c62762c46d64809e64")
+    add_versions("0.9.3", "8d47b76c8b71123423a48659274d39cb3816c8bd4926c08ffb59b7cc5c50c3bf")
 
     on_install("windows", "linux", function (package)
         os.cp("include", package:installdir())
