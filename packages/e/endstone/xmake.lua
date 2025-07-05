@@ -1,5 +1,5 @@
 package("endstone")
-    set_kind("library", {headeronly = true})
+    set_kind("library", { headeronly = true })
     add_urls("https://github.com/EndstoneMC/endstone/archive/refs/tags/v$(version).tar.gz")
 
     add_deps("expected-lite 0.8.0")
