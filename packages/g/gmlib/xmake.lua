@@ -25,6 +25,7 @@ package("gmlib")
     add_versions("A:1.3.0-rc.1", "9c87d4a7e02a048df8f9b9d74366293c46c014c840979a2fef033ffea4b899cd")
     add_versions("A:1.2.1", "d1defd5ddcd380c8095620ff8f16ec82d6d251a10bdf77808b3e7a62afeebe55")
     add_versions("A:1.3.0", "6b3bc5c9fcf312a543f88866592bf81c966bc25ab28b4ca25a60603545eecb12")
+    add_versions("A:1.3.1", "c2011ca2243fcaf63f582c37023f40668dcae5826b7c82b0527f2a9c2ba958a7")
 
     add_versions("B:1.0.0-rc.1", "b2814979a79f0a2ea3f9a6692275ddd5e8b9a603f268ceca6c6b7202d226e070")
     add_versions("B:1.0.0-rc.2", "55cc084798b1ea8c693406c523ef63ffa73504857304549a7e5bef97d74047ba")
@@ -37,6 +38,7 @@ package("gmlib")
     add_versions("B:1.3.0-rc.1", "c28fc2728187701c1d81c39b7377d1bd3d8615447039e152dc3e0e8c9916e07c")
     add_versions("B:1.2.1", "7db9fc6b50d3c242af94c92994c66d205db0f5dc1eb8d7e525b3e3ffee5acfc3")
     add_versions("B:1.3.0", "672c8b59b169751213dbbabd414359da691fb31db2c1cb7f45023cd3030a9d4d")
+    add_versions("B:1.3.1", "5cd7e7afa5531d14c8cdee3ce61aaf096aaf1d629c55436dfc15efb723592645")
 
     on_install(function (package)
         if os.isdir("include") then
