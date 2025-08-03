@@ -1,7 +1,7 @@
 package("nbt")
     set_homepage("https://github.com/GlacieTeam/NBT")
     add_urls("https://github.com/GlacieTeam/NBT/archive/refs/tags/v$(version).tar.gz")
-    set_license("MPL 2.0")
+    set_license("MPL-2.0")
 
     add_deps("binarystream 2.0.0")
 
@@ -10,8 +10,5 @@ package("nbt")
     on_install(function (package)
         os.cp("include", package:installdir())
         local configs = {}
-        if package:config("static") then
-            configs.kind = "static"
-        end
         import("package.tools.xmake").install(package, configs)
     end)

@@ -1,6 +1,8 @@
 package("endstone")
+    set_homepage("https://github.com/EndstoneMC/endstone")
     set_kind("library", { headeronly = true })
     add_urls("https://github.com/EndstoneMC/endstone/archive/refs/tags/v$(version).tar.gz")
+    set_license("Apache-2.0")
 
     add_deps("expected-lite 0.8.0")
     add_deps("fmt 10.2.1", { configs = { header_only = true } })
@@ -19,6 +21,8 @@ package("endstone")
     add_versions("0.9.2", "bfbf64996510c293d2e3b9373ac9b96c6fad5a8ff7dca7c62762c46d64809e64")
     add_versions("0.9.3", "8d47b76c8b71123423a48659274d39cb3816c8bd4926c08ffb59b7cc5c50c3bf")
     add_versions("0.9.4", "8da09837caa21bd383b55b8cd4fb8ed9ed48af1dd547e5d4f2bf30941bc726f7")
+    add_versions("0.10.0", "aee69ad0c3e07e654267ed62a67a5983422da7c04e596a0ea89d68ff9025364b")
+    add_versions("0.10.1", "d2f38622f8104fcfc348a777b1f1490fa62583d272d305ed40e86c5dba220afd")
 
     on_install("windows", "linux", function (package)
         os.cp("include", package:installdir())

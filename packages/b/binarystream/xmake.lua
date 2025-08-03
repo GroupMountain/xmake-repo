@@ -1,7 +1,7 @@
 package("binarystream")
     set_homepage("https://github.com/GlacieTeam/BinaryStream")
     set_description("BinaryStream Library")
-    set_license("MPL 2.0")
+    set_license("MPL-2.0")
 
     add_urls("https://github.com/GlacieTeam/BinaryStream/archive/refs/tags/v$(version).tar.gz")
 
