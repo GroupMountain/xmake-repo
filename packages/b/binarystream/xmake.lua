@@ -6,6 +6,7 @@ package("binarystream")
     add_urls("https://github.com/GlacieTeam/BinaryStream/archive/refs/tags/v$(version).tar.gz")
 
     add_versions("2.0.0", "babe5d4d9793224f44e75db162f689705b62cbd71622636aa310e31298d5297a")
+    add_versions("2.1.0", "7f821330a6580fd024399c63bb4aafa6c9ed0d50cb0d25c22d33a84574929f06")
 
     on_install("windows", "linux", function (package)
         os.cp("include", package:installdir())
