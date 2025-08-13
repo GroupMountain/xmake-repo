@@ -6,7 +6,7 @@ package("nbt")
     add_deps("binarystream 2.0.0")
 
     add_versions("2.0.0", "6fe89a47af94aab5add07b73771ba55faa845ec3f8719c123db8b3ca0431155c")
-    add_versions("2.0.1", "eb3825ddb5145b1475ded1b3b443bf4760347b2d0fd4e6af6ca008b856430a56")
+    add_versions("2.0.1", "d76cee6cf223c9bbcdbd00966f6bc753714b46a31de83f7b16b2b13e67eb89ee")
 
     on_install(function (package)
         os.cp("include", package:installdir())
