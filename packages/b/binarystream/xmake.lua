@@ -1,6 +1,6 @@
 package("binarystream")
     set_homepage("https://github.com/GlacieTeam/BinaryStream")
-    set_description("BinaryStream Library")
+    set_description("Minecraft BinaryStream Library")
     set_license("MPL-2.0")
 
     add_urls("https://github.com/GlacieTeam/BinaryStream/archive/refs/tags/v$(version).tar.gz")
@@ -10,7 +10,7 @@ package("binarystream")
     add_versions("2.1.1", "6024f7f3b420b18eb8b082451ef7ad590d0857e8a61343d5397b4a85cc4dff6c")
     add_versions("2.1.2", "7c77c1b388155dbfdc86ca59d690b7feddfc0ae15d6da8c3f39a525cf7f79ab6")
 
-    on_install("windows", "linux", function (package)
+    on_install(function (package)
         os.cp("include", package:installdir())
         local configs = {}
         import("package.tools.xmake").install(package, configs)
