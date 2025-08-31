@@ -5,7 +5,7 @@ package("nbt")
 
     add_urls("https://github.com/GlacieTeam/NBT/archive/refs/tags/v$(version).tar.gz")
 
-    add_deps("binarystream 2.1.2")
+    add_deps("binarystream 2.2.0")
 
     add_versions("2.0.0", "6fe89a47af94aab5add07b73771ba55faa845ec3f8719c123db8b3ca0431155c")
     add_versions("2.0.1", "d76cee6cf223c9bbcdbd00966f6bc753714b46a31de83f7b16b2b13e67eb89ee")
