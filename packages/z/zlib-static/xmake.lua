@@ -37,22 +37,27 @@ package("zlib-static")
                 if not is_plat("windows") then
                     set_basename("z")
                 end
-                add_files("adler32.c")
-                add_files("compress.c")
-                add_files("crc32.c")
-                add_files("deflate.c")
-                add_files("gzclose.c")
-                add_files("gzlib.c")
-                add_files("gzread.c")
-                add_files("gzwrite.c")
-                add_files("inflate.c")
-                add_files("infback.c")
-                add_files("inftrees.c")
-                add_files("inffast.c")
-                add_files("trees.c")
-                add_files("uncompr.c")
-                add_files("zutil.c")
-                add_headerfiles("zlib.h", "zconf.h")
+                add_files(
+                    "adler32.c",
+                    "compress.c",
+                    "crc32.c",
+                    "deflate.c",
+                    "gzclose.c",
+                    "gzlib.c",
+                    "gzread.c",
+                    "gzwrite.c",
+                    "inflate.c",
+                    "infback.c",
+                    "inftrees.c",
+                    "inffast.c",
+                    "trees.c",
+                    "uncompr.c",
+                    "zutil.c"
+                )
+                add_headerfiles(
+                    "zlib.h",
+                    "zconf.h"
+                )
                 check_cincludes("Z_HAVE_UNISTD_H", "unistd.h")
                 check_cincludes("HAVE_SYS_TYPES_H", "sys/types.h")
                 check_cincludes("HAVE_STDINT_H", "stdint.h")
