@@ -33,7 +33,7 @@ package("zlib-static")
             includes("@builtin/check")
             add_rules("mode.debug", "mode.release")
             target("zlib")
-                set_kind("$(kind)")
+                set_kind("static")
                 if not is_plat("windows") then
                     set_basename("z")
                 end
