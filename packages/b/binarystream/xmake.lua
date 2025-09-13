@@ -13,6 +13,7 @@ package("binarystream")
     add_versions("2.2.0", "eba50d77277f33021603b2d0fb54fdc727f43c2000749858d0fffa4972df384d")
     add_versions("2.3.0", "5af06dfb3cc18b204704975579c2dc7047caffdc620b7cd958be2ec0b9624dc3")
     add_versions("2.3.1", "aabfb5a486d357ee60110d97fd397f77b05c98de02e9526b86a33708b80ac844")
+    add_versions("2.3.2", "bd9fbb46948202a2b9c514d030aa1000988a9773fa4f6f3e98884333734e6349")
 
     on_install(function (package)
         os.cp("include", package:installdir())
