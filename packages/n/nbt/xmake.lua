@@ -5,7 +5,7 @@ package("nbt")
 
     add_urls("https://github.com/GlacieTeam/NBT/archive/refs/tags/v$(version).tar.gz")
 
-    add_deps("binarystream 2.3.1")
+    add_deps("binarystream 2.3.2")
     add_deps("zlib-static 1.3.1")
 
     add_versions("2.0.0", "6fe89a47af94aab5add07b73771ba55faa845ec3f8719c123db8b3ca0431155c")
@@ -19,6 +19,7 @@ package("nbt")
     add_versions("2.2.0", "c27b3a9f9a6b7d41ea963e024f9786c8ae5e85ef44fcabe597402abb0a6f5cb0")
     add_versions("2.3.0", "311bd62d46e4401fc411a4c7857dc91b5487d542dd670ad7dc96bb6b0068dc1a")
     add_versions("2.3.1", "6077b62874fb229e96b30576dc738d3a2a5678aff3146c1a2901f6140767197a")
+    add_versions("2.3.2", "70225daae077ece03b4eae57264e933c8b1087e0a5aad176abc1ba7a50192864")
 
     on_install(function (package)
         os.cp("include", package:installdir())
