@@ -1,9 +1,3 @@
-add_repositories(
-    "liteldev-repo https://github.com/LiteLDev/xmake-repo.git",
-    "groupmountain-repo https://github.com/GroupMountain/xmake-repo.git",
-    "miracleforest-repo https://github.com/MiracleForest/xmake-repo.git"
-)
-
 package("gmlib")
     add_urls("https://github.com/GroupMountain/GMLIB-Release/releases/download/v$(version)/SDK.zip", {alias = "A"})
     add_urls("https://github.com/GroupMountain/GMLIB-Release/archive/refs/tags/v$(version).tar.gz", {alias = "B"})
@@ -71,3 +65,4 @@ package("gmlib")
             os.mv(path.join(package:installdir(), "include"), path.join(package:installdir(), "include-shared"))
         end
     end)
+
