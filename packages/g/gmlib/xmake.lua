@@ -1,6 +1,13 @@
+add_repositories(
+    "liteldev-repo https://github.com/LiteLDev/xmake-repo.git",
+    "groupmountain-repo https://github.com/GroupMountain/xmake-repo.git",
+    "miracleforest-repo https://github.com/MiracleForest/xmake-repo.git"
+)
+
 package("gmlib")
     add_urls("https://github.com/GroupMountain/GMLIB-Release/releases/download/v$(version)/SDK.zip", {alias = "A"})
     add_urls("https://github.com/GroupMountain/GMLIB-Release/archive/refs/tags/v$(version).tar.gz", {alias = "B"})
+    add_urls("https://github.com/GroupMountain/GMLIB-Release/releases/download/v$(version)/SDK-shared.zip", {alias = "C"})
 
     add_versions("A:0.12.7", "100128c92da14ab8ba86ed2b260a8c04ef12c7ac25df62d8ef702b4fcf01b80b")
     add_versions("A:0.12.8", "284e8e17523f7c07878bdb9af2cf7170a8306f826beea28f9b7cf87da7296e3d")
@@ -46,6 +53,9 @@ package("gmlib")
     add_versions("B:1.4.2", "3c4db50b9f41b9ec2e67c882cd823dba82045daab0253bf846754fce7f9a97bd")
     add_versions("B:1.4.3", "58cea5b2983310b7639aa4b583ffe569533e85a9a20c5507c7a35dc2e75ef869")
 
+    add_versions("C:1.5.0", "d23bc76cf71bd48e35b047b7f80bb344983287705423eece4355b69cc2e7ea5a")
+    add_resources("1.5.0", "SDK-static", "https://github.com/GroupMountain/GMLIB-Release/releases/download/v1.5.0/SDK-static.zip", "0e9d76529da1b3311b55ebfe6cbf6cdf780e7554bcc956f19dcd107a52f0fd31")
+    add_includedirs("include-static", "include-shared", "include")
     on_install(function (package)
         if os.isdir("include") then
             os.cp("*", package:installdir())
@@ -53,5 +63,11 @@ package("gmlib")
             os.cp("bin/SDK/*", package:installdir())
         else
             assert(false, "no include or bin")
+        end
+        if package:version():ge("1.4.9") then 
+            local static = package:resourcedir("SDK-static")
+            os.cp(path.join(static, "lib/GMLIB.lib"), path.join(package:installdir(), "lib/GMLIB-static.lib"))
+            os.cp(path.join(static, "include"), path.join(package:installdir(), "include-static"))
+            os.mv(path.join(package:installdir(), "include"), path.join(package:installdir(), "include-shared"))
         end
     end)
