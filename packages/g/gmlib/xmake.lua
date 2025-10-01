@@ -60,9 +60,9 @@ package("gmlib")
         end
         if package:version():ge("1.4.9") then 
             local static = package:resourcedir("SDK-static")
-            os.cp(path.join(static, "lib/GMLIB.lib"), path.join(package:installdir(), "lib/GMLIB-static.lib"))
+            os.cp(path.join(static, "lib", "GMLIB.lib"), path.join(package:installdir("lib"), "GMLIB-static.lib"))
             os.cp(path.join(static, "include"), path.join(package:installdir(), "include-static"))
-            os.mv(path.join(package:installdir(), "include"), path.join(package:installdir(), "include-shared"))
+            os.mv(package:installdir("include"), package:installdir("include-shared"), "include-shared")
+            os.mv(path.join(package:installdir("lib"), "GMLIB.lib"), path.join(package:installdir("lib"), "GMLIB-shared.lib"))
         end
     end)
-
