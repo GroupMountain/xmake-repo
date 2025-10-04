@@ -3,7 +3,7 @@ package("modapi")
     add_versions("A:0.1.0", "3c26f83a0e578d6b57a61160dce4922324de9a2274141ffdfd194e1efdda0681")
 
     add_urls("https://github.com/GroupMountain/ModApi-Release/archive/refs/tags/v$(version).tar.gz", {alias = "B"})
-    add_versions("B:0.1.0", "72d1aef01fe4945e1640d6815fb36b969a22f75894825752f500b1d76154d8c0")
+    add_versions("B:0.1.0", "32a954590aa74b56245ec0ad44b3046be11df756fc56b7d050eb24770a884ba9")
 
     on_install(function (package)
         if os.isdir("include") then
