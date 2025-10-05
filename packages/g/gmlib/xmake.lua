@@ -50,6 +50,13 @@ package("gmlib")
     add_versions("C:1.5.0", "d23bc76cf71bd48e35b047b7f80bb344983287705423eece4355b69cc2e7ea5a")
     add_resources("1.5.0", "SDK-static", "https://github.com/GroupMountain/GMLIB-Release/releases/download/v1.5.0/SDK-static.zip", "0e9d76529da1b3311b55ebfe6cbf6cdf780e7554bcc956f19dcd107a52f0fd31")
     add_includedirs("include-static", "include-shared", "include")
+
+    on_load(function (package)
+        if package:version():ge("1.4.9") then
+            package:add("deps", "zstr 1.0.8", "minizip-ng 4.0.9")
+        end
+    end)
+
     on_install(function (package)
         if os.isdir("include") then
             os.cp("*", package:installdir())
