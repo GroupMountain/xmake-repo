@@ -24,6 +24,7 @@ package("nbt")
     add_versions("2.3.4", "9ded1240913bacab4b8593edc52388d8e9d3312797edb05b56795a7314f671b3")
     add_versions("2.3.5", "0959137d7a9d359ded108d1454691604ae4e9b547354942f0da03d30f5500481")
     add_versions("2.3.6", "09ebbe5fa25d38e4f249c85ef368385811a0df341e9ab571ab5b72cc47b1f39b")
+    add_versions("2.4.0", "cc04a2923e75fa58079628d4bd219b894f278a7e6f1e1eee8e31cb83652db956")
 
     on_install(function (package)
         os.cp("include", package:installdir())
