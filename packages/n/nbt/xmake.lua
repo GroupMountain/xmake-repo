@@ -5,7 +5,8 @@ package("nbt")
 
     add_urls("https://github.com/GlacieTeam/NBT/archive/refs/tags/v$(version).tar.gz")
 
-    add_deps("binarystream 2.3.2")
+    add_configs("stl", {description = "Set the STL library.", default = "libstdc++", values = {"libstdc++", "libc++"}})
+
     add_deps("zlib-static 1.3.1")
 
     add_versions("2.0.0", "6fe89a47af94aab5add07b73771ba55faa845ec3f8719c123db8b3ca0431155c")
@@ -29,5 +30,21 @@ package("nbt")
     on_install(function (package)
         os.cp("include", package:installdir())
         local configs = {}
+        if is_plat("linux") then
+            local stdlib = package:config("stl")
+            if stdlib == "libc++" then 
+                configs.cxflags = "-stdlib=libc++"
+                configs.ldflags = "-stdlib=libc++"
+            end
+        end
         import("package.tools.xmake").install(package, configs)
+    end)
+
+    on_load(function (package) 
+        local stdlib = package:config("stl")
+        if stdlib == "libc++" and is_plat("linux") then 
+            package:add("deps", "binarystream 2.3.2", {configs = {cxflags = "-stdlib=libc++", ldflags = "-stdlib=libc++"}})
+        else 
+            package:add("deps", "binarystream 2.3.2")
+        end
     end)
