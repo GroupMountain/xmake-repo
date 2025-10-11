@@ -9,7 +9,7 @@ package("raknet")
     add_versions("1.1.0", "aa8572e5729a82807698d203d3fb69a436a59c04fbbebe1b49f5799ec62cef40")
 
     add_configs("ipv6", {description = "Enable IPv6 support", default = true, type = "boolean"})
-    add_configs("stl", {description = "Set the STL library.", default = "libstdc++", values = {"libstdc++", "libc++"}})
+    add_configs("stl", {description = "Set the STL library on Linux.", default = "libstdc++", values = {"libstdc++", "libc++"}})
 
     on_install(function (package)
         os.cp("include", package:installdir())

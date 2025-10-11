@@ -5,7 +5,7 @@ package("nbt")
 
     add_urls("https://github.com/GlacieTeam/NBT/archive/refs/tags/v$(version).tar.gz")
 
-    add_configs("stl", {description = "Set the STL library.", default = "libstdc++", values = {"libstdc++", "libc++"}})
+    add_configs("stl", {description = "Set the STL library on Linux.", default = "libstdc++", values = {"libstdc++", "libc++"}})
 
     add_deps("zlib 1.3.1")
 
