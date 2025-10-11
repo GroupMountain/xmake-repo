@@ -7,7 +7,7 @@ package("nbt")
 
     add_configs("stl", {description = "Set the STL library.", default = "libstdc++", values = {"libstdc++", "libc++"}})
 
-    add_deps("zlib-static 1.3.1")
+    add_deps("zlib 1.3.1")
 
     add_versions("2.0.0", "6fe89a47af94aab5add07b73771ba55faa845ec3f8719c123db8b3ca0431155c")
     add_versions("2.0.1", "d76cee6cf223c9bbcdbd00966f6bc753714b46a31de83f7b16b2b13e67eb89ee")
