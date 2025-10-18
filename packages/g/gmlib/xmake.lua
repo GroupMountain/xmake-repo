@@ -61,12 +61,12 @@ package("gmlib")
         "https://github.com/GroupMountain/GMLIB-Release/releases/download/v1.5.1/SDK-static.zip",
         "08bca15c8db99b17de88f6ab755f06c294c6501297b1d855e6a82289ffa765d1"
     )
-    add_versions("C:1.5.2", "3f3fba7d85689bb3b7e2f6fe9e4b97a3908d85b0a8f13b008826e141b9a2d166")
+    add_versions("C:1.5.2", "ed7b2ad9cb40eb14b1d00c4d0cff066801b89b52f68ca35c99ab0dfac2641835")
     add_resources(
         "1.5.2",
         "SDK-static",
         "https://github.com/GroupMountain/GMLIB-Release/releases/download/v1.5.1/SDK-static.zip",
-        "62ec686795dfe96a62ed42d66157046224420382189c9f2bbdf1d06cee37c6ab"
+        "2b1e846dd50645b5a96d4b043d9fab13de159e5ccd5cf0f39abd4bdb66dbe562"
     )
     add_includedirs("include-static", "include-shared", "include")
 
