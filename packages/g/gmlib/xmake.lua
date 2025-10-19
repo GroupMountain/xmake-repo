@@ -65,7 +65,7 @@ package("gmlib")
     add_resources(
         "1.5.2",
         "SDK-static",
-        "https://github.com/GroupMountain/GMLIB-Release/releases/download/v1.5.1/SDK-static.zip",
+        "https://github.com/GroupMountain/GMLIB-Release/releases/download/v1.5.2/SDK-static.zip",
         "2b1e846dd50645b5a96d4b043d9fab13de159e5ccd5cf0f39abd4bdb66dbe562"
     )
     add_includedirs("include-static", "include-shared", "include")
@@ -93,3 +93,4 @@ package("gmlib")
             os.mv(path.join(package:installdir("lib"), "GMLIB.lib"), path.join(package:installdir("lib"), "GMLIB-shared.lib"))
         end
     end)
+
