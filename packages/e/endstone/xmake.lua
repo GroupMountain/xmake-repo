@@ -32,9 +32,17 @@ package("endstone")
     add_versions("0.10.8", "c1d3b25b0065aa0df125253582fd5557d2c1a6e34820fdf83828566a6ff3a2f0")
     add_versions("0.10.9", "c6e70d8c6d6f92307421f46dc1d5cd7bae42f7a8d8d06f78e5502397a2851de9")
     add_versions("0.10.10", "15baf2e01ebe3945205a3158006f0eb2228ff92052103f752025f631128ea9c5")
+    add_versions("0.10.11", "6c2889c0232dd9bfb5b5f01e8287dcc1b2b4fb6897d7711c47c978fc5f9ac210")
+    add_versions("0.10.12", "d4d8c425f25179c951ac6692bb90698b500ed84035e56f39e089e89208dec3f4")
+    add_versions("0.10.13", "ab396c35654562a2da6c508c97cc4e25e3f737f2694afa8e406ee6fc9d76a05c")
+    add_versions("0.10.14", "0d8092626bc6184ba163b61674a7e305906bcefe9d614ad40f2fbc427da111bc")
+    add_versions("0.10.15", "1fe12d5371b2ca54a55d3b9eb8c706695b4e2a7207eef1efce477a07dddc708c")
+    add_versions("0.10.16", "add75b2be893c520220990f416558095e2739f510dadd22e11b52980625077cd")
+    add_versions("0.10.17", "edba9829713b7038ea87c396215f9ae04b22b3223266a810962946eb04ea71ef")
 
     on_install("windows", "linux", function (package)
         os.cp("include", package:installdir())
     end)
+
 
 
