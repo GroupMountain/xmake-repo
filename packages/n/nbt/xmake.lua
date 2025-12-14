@@ -30,7 +30,7 @@ package("nbt")
     add_versions("2.4.2", "21b9082eee68aa5ee9e4f4268ec4785b78275e83209a1bc8d951ff4c179e1b14")
     add_versions("2.5.0", "1ab736b4d4aad1c50427e2ef50f78b20264f56de9ab7b0594b9edbcd668bd0be")
     add_versions("2.6.0", "d93733f819e7adc8d509da66c81db65b0715da21b0c52bb01472173c6e72b86a")
-    add_versions("2.6.1", "ec4e14b9164f371fa08a59b8a09867f6cbe656c2c7a475fb8b563cd9bf20547d")
+    add_versions("2.6.1", "65da3c7abf80995852b68a43249b130e55e6738c139e3e1d170cc0a53685043c")
 
     on_install(function (package)
         os.cp("include", package:installdir())
