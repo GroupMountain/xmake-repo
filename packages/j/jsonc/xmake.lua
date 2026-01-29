@@ -1,12 +1,13 @@
 package("jsonc")
+    set_description("JSONC for morden C++")
     set_homepage("https://github.com/DivanadiumPentaoxide/JSONC")
-    set_kind("library", { headeronly = true })
+    set_kind("library")
     add_urls(
         "https://github.com/DivanadiumPentaoxide/JSONC.git",
         "https://github.com/DivanadiumPentaoxide/JSONC/archive/refs/tags/v$(version).tar.gz"
     )
 
-    add_versions("1.0.0", "ce2cf7d4f84a019505aaa3e36b12279a2c1aaca28b6f9844c185457c6699a7fd")
+    add_versions("1.0.0", "b382d277090a27c3b9e63f49368bd55b7e12a6d78abb9e65f9d15ee5d89a275d")
 
     on_install(function (package)
         os.cp("include", package:installdir())
