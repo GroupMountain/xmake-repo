@@ -5,7 +5,7 @@ package("endstone")
     set_license("Apache-2.0")
 
     add_deps("expected-lite 0.8.0")
-    add_deps("fmt 10.2.1", { configs = { header_only = true } })
+    add_deps("fmt 11.2.0", { configs = { cxflags = "-stdlib=libc++", ldflags = "-stdlib=libc++" } })
 
     add_versions("0.6.0", "d9d7f865629165230b6dfcb34b359186524f6784a7655f39a7140ca998455a38")
     add_versions("0.6.1", "d77cf3c6cf55c7df5c6e74e87ba6e371c3716778f53f1fa97d3eabe29555f91d")
