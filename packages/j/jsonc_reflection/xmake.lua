@@ -7,7 +7,7 @@ package("jsonc_reflection")
         "https://github.com/DivanadiumPentaoxide/JSONC-Reflection/archive/refs/tags/v$(version).tar.gz"
     )
 
-    add_deps("jsonc v1.3.0")
+    add_deps("jsonc v1.3.1")
     add_deps("boost_pfr 2.2.0")
     add_deps("magic_enum 0.9.7")
 
@@ -17,6 +17,7 @@ package("jsonc_reflection")
     add_versions("1.1.1", "6d7d233f1746ce4aa46e3d9fbfbe0cb6b54c9bb92f4aa6e74e78a2b2fd14abfb")
     add_versions("1.2.0", "25916b3500452ca6b3394c7e66c7e0c422cbc2d3089f48c870c095b978b56939")
     add_versions("1.3.0", "17dd685df6b965de6f64d6ce5930514b515088e979e1cf2c6d2178acb002a871")
+    add_versions("1.3.1", "3fedb369704e764645dad5dcaf4d790fa8afb889bc9b84e66cd4ef64e1314205")
 
     on_install(function (package)
         os.cp("include", package:installdir())
