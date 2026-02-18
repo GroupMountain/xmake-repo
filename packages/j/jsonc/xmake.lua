@@ -12,6 +12,7 @@ package("jsonc")
     add_versions("1.1.1", "8624a4421af0049ebfdcd8c7cccdc2b95fb25e7cb72bc293a4ccee284816d692")
     add_versions("1.2.0", "0a1f833674b252daca5626ba28c2fa53bf37ec222863b862c0ca1f4724af6f46")
     add_versions("1.3.0", "661694385b6706ee01c47defb825971a86d700db7226f8ea7ce906031cfb72c5")
+    add_versions("1.3.1", "27d1411b3734264858417ab5c1f4fe4d36f542dbf725aff297bfde0ad97a821c")
 
     on_install(function (package)
         os.cp("include", package:installdir())
