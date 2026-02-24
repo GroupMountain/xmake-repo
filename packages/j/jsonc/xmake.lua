@@ -1,10 +1,10 @@
 package("jsonc")
     set_description("JSONC for morden C++")
-    set_homepage("https://github.com/DivanadiumPentaoxide/JSONC")
+    set_homepage("https://github.com/EndGateMC/JSONC")
     set_kind("library")
     add_urls(
-        "https://github.com/DivanadiumPentaoxide/JSONC.git",
-        "https://github.com/DivanadiumPentaoxide/JSONC/archive/refs/tags/v$(version).tar.gz"
+        "https://github.com/EndGateMC/JSONC.git",
+        "https://github.com/EndGateMC/JSONC/archive/refs/tags/v$(version).tar.gz"
     )
 
     add_versions("1.0.0", "b382d277090a27c3b9e63f49368bd55b7e12a6d78abb9e65f9d15ee5d89a275d")
