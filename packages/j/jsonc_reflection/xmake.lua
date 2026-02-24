@@ -1,10 +1,10 @@
 package("jsonc_reflection")
     set_description("JSONC Reflection for morden C++")
-    set_homepage("https://github.com/DivanadiumPentaoxide/JSONC-Reflection")
+    set_homepage("https://github.com/EndGateMC/JSONC-Reflection")
     set_kind("library", { headeronly = true })
     add_urls(
-        "https://github.com/DivanadiumPentaoxide/JSONC-Reflection.git",
-        "https://github.com/DivanadiumPentaoxide/JSONC-Reflection/archive/refs/tags/v$(version).tar.gz"
+        "https://github.com/EndGateMC/JSONC-Reflection.git",
+        "https://github.com/EndGateMC/JSONC-Reflection/archive/refs/tags/v$(version).tar.gz"
     )
 
     add_deps("jsonc v1.3.1")
