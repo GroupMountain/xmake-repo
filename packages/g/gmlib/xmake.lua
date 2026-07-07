@@ -103,6 +103,13 @@ package("gmlib")
         "https://github.com/GroupMountain/GMLIB-Release/releases/download/v26.10.0/SDK-static.zip",
         "202d7d42ee36509f7118d817152878c0af23ab93ef34ddc2c7adb31d60f8c76d"
     )
+    add_versions("C:26.10.0", "d426c4233c2928deddff43ce6fbffad8a8384c8ede92e7c8bd2acebeae9adc36")
+    add_resources(
+        "26.10.0",
+        "SDK-static",
+        "https://github.com/GroupMountain/GMLIB-Release/releases/download/v26.10.0/SDK-static.zip",
+        "f16480106a6a39611f3a7838db3993625562b93dd02b41eff5d00805b202fa7c"
+    )
     add_includedirs("include-static", "include-shared", "include")
 
     on_load(function (package)
