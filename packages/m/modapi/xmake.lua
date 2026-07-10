@@ -17,6 +17,7 @@ package("modapi")
     add_versions("B:0.3.1", "e85dbe8d520d42cb185dd114cec05e5deb02489670aea91ff9c368c92c5be21d")
     add_versions("B:0.4.0", "74d6212399fe71fc8c6b230edd9774bd416817249fcd37fb3a7dc3d4b7b4ebeb")
     add_versions("B:26.10.0", "42227aca2c0bba1ddb85c0c3390ee61579dc15f68f0ee3c83d51f31b7b35141e")
+    add_versions("B:26.20.0", "3654c2abbadb350bc5a9a22863ecce9494fe8ee7284d240e0c763a08ef87ded4")
 
     on_install(function (package)
         if os.isdir("include") then
