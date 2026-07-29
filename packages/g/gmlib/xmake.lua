@@ -114,7 +114,7 @@ package("gmlib")
     add_resources(
         "26.20.1",
         "SDK-static",
-        "https://github.com/GroupMountain/GMLIB-Release/releases/download/v26.20.0/SDK-static.zip",
+        "https://github.com/GroupMountain/GMLIB-Release/releases/download/v26.20.1/SDK-static.zip",
         "a9e5dc7a73c3d208dc8a5ba066cbba7b8b4e5064b98b1c42d1cb1dcf7dee4894"
     )
     add_includedirs("include-static", "include-shared", "include")
