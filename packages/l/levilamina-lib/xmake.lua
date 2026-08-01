@@ -60,7 +60,7 @@ package("levilamina-lib")
             os.cp(path.join(common_src_dir, "ll/api/**.h"),package:installdir("include"), {rootdir = common_src_dir})
 
         else
-            cprint("${bright green}There is no Pre-build Levilamina for this version.Trying to compile")
+
             local git = import("devel.git")
             local sourcedir = path.join(path.directory(package:builddir()), "arepo")
             os.rm(sourcedir)
