@@ -7,7 +7,7 @@ package("levilamina-lib")
     add_configs("mode", {default = "release", values = {"debug", "release"}})
 
     add_urls("https://github.com/LiteLDev/LeviLamina.git", {
-        includes = {"src-server", "src-client", "src"},   -- 同时拉取两个目录
+        includes = {"src-server", "src-client", "src" ,"script" ,"src-test"},
     })
 
     add_versionfiles("versions/versions.txt")
@@ -50,33 +50,21 @@ package("levilamina-lib")
             local zip  = path.join(os.tmpdir(), file)
             import("net.http").download(url, zip, {sha256 = sha})
             import("utils.archive").extract(zip, package:installdir())
-
-            local src_dir = path.join(path.directory(package:builddir()),(tt == "server") and "src-server" or "src-client")
-
-            os.cp(path.join(src_dir, "ll/api/**.h"), package:installdir("include"), {rootdir = src_dir})
-            os.cp(path.join(src_dir, "mc/**.h"),    package:installdir("include"), {rootdir = src_dir})
+            cprint("${bright green}Start to copy headerfiles")
+            cprint("${bright green}coping general headerfiles")
             local common_src_dir = path.join(path.directory(package:builddir()),"src")
             os.cp(path.join(common_src_dir, "mc/**.h"),package:installdir("include"), {rootdir = common_src_dir})
             os.cp(path.join(common_src_dir, "ll/api/**.h"),package:installdir("include"), {rootdir = common_src_dir})
-
+            cprint("${bright green}coping %s headerfiles",tt)
+            local src_dir = path.join(path.directory(package:builddir()),(tt == "server") and "src-server" or "src-client")
+            os.cp(path.join(src_dir, "ll/api/**.h"), package:installdir("include"), {rootdir = src_dir})
+            os.cp(path.join(src_dir, "mc/**.h"),    package:installdir("include"), {rootdir = src_dir})
+            cprint("${bright green}finish to copy headerfiles")
         else
-
-            local git = import("devel.git")
-            local sourcedir = path.join(path.directory(package:builddir()), "arepo")
-            os.rm(sourcedir)
-            git.clone("https://github.com/LiteLDev/LeviLamina.git", {
-                depth = 1,
-                ref = "v" .. ver,
-                outputdir = sourcedir,
-                recursive = false,
-                longpaths = true,
-            })
-            local oldir = os.cd(sourcedir)
             if package:config("target_type") == "server" then
                 import("package.tools.xmake").install(package)
             else
                 import("package.tools.xmake").install(package, {"--target_type=client"})
             end
-            os.cd(oldir)
         end
     end)
